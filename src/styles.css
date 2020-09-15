@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins&display=swap');
 
 :root {
     --bg-grey-500: #616E7C;
     --bg-grey-900: #1F2933;
+    --bg-primary: #A6B1E1;
     --container-width: 50%;
 }
 
@@ -16,6 +17,23 @@ body {
     background-color: var(--bg-grey-900);
 }
 
+button {
+    background-color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 16px 8px;
+    transform: scale(1);
+    transition: 250ms;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 250ms;
+}
+
 .container {
     margin: auto;
     width: var(--container-width);
@@ -23,6 +41,11 @@ body {
 
 .font-heading {
     font-family: 'Major Mono Display', monospace;
+}
+
+.layout-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .layout-row {
