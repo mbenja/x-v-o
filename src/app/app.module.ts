@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeMenuComponent } from './home-menu/home-menu.component';
 
+import { firebaseConfig } from './config';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +18,8 @@ import { HomeMenuComponent } from './home-menu/home-menu.component';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     AppRoutingModule
   ],
   providers: [],
