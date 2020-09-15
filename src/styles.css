@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+:root {
+    --bg-grey-500: #616E7C;
+    --bg-grey-900: #1F2933;
+    --container-width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --container-width: 100%;
+    }
+}
+
+body {
+    background-color: var(--bg-grey-900);
+}
+
+.container {
+    margin: auto;
+    width: var(--container-width);
+}
+
+.font-heading {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.layout-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}

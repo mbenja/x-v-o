@@ -1,0 +1,25 @@
+.header {
+    background-color: var(--bg-grey-500);
+    border-radius: 8px;
+    margin: 16px 8px;
+    padding: 16px 16px;
+}
+
+.header-image {
+    height: 40px;
+    transform: scale(1);
+    transition: 250ms;
+    width: 40px;
+}
+
+.header-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+.header-title {
+    font-size: 32px;
+    letter-spacing: 8px;
+    margin: auto 0;
+}
