@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeMenuComponent } from './home-menu/home-menu.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeMenuComponent } from './components/home-menu/home-menu.component';
 
 import { firebaseConfig } from './config';
 import { AngularFireModule } from '@angular/fire';
