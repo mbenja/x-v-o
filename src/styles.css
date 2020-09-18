@@ -4,6 +4,7 @@
     --bg-grey-500: #616E7C;
     --bg-grey-900: #1F2933;
     --bg-primary: #A6B1E1;
+    --bg-primary-disabled: rgba(166, 177, 225, 0.5);
     --container-width: 50%;
 }
 
@@ -34,9 +35,43 @@ button:hover {
     transition: 250ms;
 }
 
+button.disabled-primary {
+    background-color: var(--bg-primary-disabled);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 16px 8px;
+}
+
+button.disabled-primary:hover {
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+input {
+    border-bottom: 4px solid transparent;
+    border-left: none;
+    border-radius: 8px;
+    border-right: none;
+    border-top: 4px solid transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 16px 16px;
+}
+
+input:focus {
+    border-bottom: 4px solid var(--bg-primary);
+    outline: none;  
+}
+
 .container {
     margin: auto;
     width: var(--container-width);
+}
+
+.disabled-primary {
+    background-color: var(--bg-primary-disabled);
 }
 
 .font-heading {

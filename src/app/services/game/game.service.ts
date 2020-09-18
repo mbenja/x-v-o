@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Game, newGame } from '../interfaces/Game';
+import { Game, newGame } from '../../interfaces/Game';
 
 @Injectable({
   providedIn: 'root'

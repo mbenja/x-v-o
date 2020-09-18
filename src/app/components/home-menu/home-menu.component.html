@@ -1,8 +1,9 @@
 <div class="home-menu layout-col">
-    <button>
+    <input class="home-menu-item" placeholder="Player Name" maxlength="12" (input)="setPlayerName($event.target.value)" [ngModel]="playerName" />
+    <button [ngClass]="getButtonClasses()">
         Join Random
     </button>
-    <button class="home-menu-button-bottom">
+    <button [ngClass]="getButtonClasses()">
         Create New
     </button>
 </div>
