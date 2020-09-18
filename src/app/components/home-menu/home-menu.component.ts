@@ -16,10 +16,8 @@ export class HomeMenuComponent implements OnInit {
   }
 
   setPlayerName(name: string):void {
-    if (name !== "") {
-      this.stateService.setPlayerName(name);
-      this.playerName = name;
-    }
+    this.stateService.setPlayerName(name);
+    this.playerName = name;
   }
 
   getButtonClasses() {
