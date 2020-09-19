@@ -3,7 +3,7 @@
     <button [ngClass]="getButtonClasses()">
         Join Random
     </button>
-    <button [ngClass]="getButtonClasses()">
+    <button [ngClass]="getButtonClasses()" (click)="createGame()">
         Create New
     </button>
 </div>

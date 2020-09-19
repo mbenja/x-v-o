@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { GameService } from '../../services/game/game.service';
 import { StateService } from '../../services/state/state.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { StateService } from '../../services/state/state.service';
 export class HomeMenuComponent implements OnInit {
   public playerName: string;
 
-  constructor(private stateService: StateService) { }
+  constructor(private gameService: GameService, private stateService: StateService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +20,13 @@ export class HomeMenuComponent implements OnInit {
   setPlayerName(name: string):void {
     this.stateService.setPlayerName(name);
     this.playerName = name;
+  }
+
+  createGame(): void {
+    this.gameService.createGame(this.playerName).then(gameId => {
+      this.stateService.setIsP1(true);
+      this.router.navigateByUrl(`/game/${gameId}`);
+    });
   }
 
   getButtonClasses() {
