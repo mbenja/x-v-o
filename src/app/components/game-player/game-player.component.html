@@ -29,20 +29,34 @@
         </div>
         <table class="game-player-board">
             <tr>
-                <td class="game-player-table-cell r1 c1" [ngClass]="getTableCellClasses(0)">{{game.board[0] ? game.board[0] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell r1 c2" [ngClass]="getTableCellClasses(1)">{{game.board[1] ? game.board[1] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell r1" [ngClass]="getTableCellClasses(2)">{{game.board[2] ? game.board[2] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r1 c1" [ngClass]="getTableCellClasses(0)" (click)="updateGameBoard(0)">{{game.board[0] ? game.board[0] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r1 c2" [ngClass]="getTableCellClasses(1)" (click)="updateGameBoard(1)">{{game.board[1] ? game.board[1] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r1" [ngClass]="getTableCellClasses(2)" (click)="updateGameBoard(2)">{{game.board[2] ? game.board[2] : "&nbsp;"}}</td>
             </tr>
             <tr>
-                <td class="game-player-table-cell r2 c1" [ngClass]="getTableCellClasses(3)">{{game.board[3] ? game.board[3] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell r2 c2" [ngClass]="getTableCellClasses(4)">{{game.board[4] ? game.board[4] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell r2" [ngClass]="getTableCellClasses(5)">{{game.board[5] ? game.board[5] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r2 c1" [ngClass]="getTableCellClasses(3)" (click)="updateGameBoard(3)">{{game.board[3] ? game.board[3] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r2 c2" [ngClass]="getTableCellClasses(4)" (click)="updateGameBoard(4)">{{game.board[4] ? game.board[4] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell r2" [ngClass]="getTableCellClasses(5)" (click)="updateGameBoard(5)">{{game.board[5] ? game.board[5] : "&nbsp;"}}</td>
             </tr>
             <tr>
-                <td class="game-player-table-cell c1" [ngClass]="getTableCellClasses(6)">{{game.board[6] ? game.board[6] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell c2" [ngClass]="getTableCellClasses(7)">{{game.board[7] ? game.board[7] : "&nbsp;"}}</td>
-                <td class="game-player-table-cell" [ngClass]="getTableCellClasses(8)">{{game.board[8] ? game.board[8] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell c1" [ngClass]="getTableCellClasses(6)" (click)="updateGameBoard(6)">{{game.board[6] ? game.board[6] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell c2" [ngClass]="getTableCellClasses(7)" (click)="updateGameBoard(7)">{{game.board[7] ? game.board[7] : "&nbsp;"}}</td>
+                <td class="game-player-table-cell" [ngClass]="getTableCellClasses(8)" (click)="updateGameBoard(8)">{{game.board[8] ? game.board[8] : "&nbsp;"}}</td>
             </tr>
         </table>
+        <div *ngIf="isWin !== -1 || isDraw" class="game-player-results-container layout-col">
+            <div *ngIf="isWin === 1" class="game-player-results-item layout-row flex-centered">
+                {{game.p1}} Wins!
+            </div>
+            <div *ngIf="isWin === 2" class="game-player-results-item layout-row flex-centered">
+                {{game.p2}} Wins!
+            </div>
+            <div *ngIf="isDraw" class="game-player-results-item layout-row flex-centered">
+                Draw Game!
+            </div>
+            <button (click)="goHome()">
+                Go Home
+            </button>
+        </div>
     </div>  
 </div>

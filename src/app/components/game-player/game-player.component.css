@@ -31,6 +31,18 @@
     font-size: 14px;
 }
 
+.game-player-results-container {
+    margin: 16px 8px;
+    padding: 16px 16px;
+}
+
+.game-player-results-item {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 16px 16px;
+}
+
 .game-player-table-cell {
     color: rgba(256, 256, 256, 0.9);
     cursor: default;
