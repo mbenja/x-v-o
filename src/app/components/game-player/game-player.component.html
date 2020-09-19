@@ -1,7 +1,9 @@
-<div class="game-player layout-col">
+<div class="layout-col">
     <div *ngIf="isP1 && game && game.p1 && !game.p2" class="layout-col game-player-waiting-container">
-        <div class="layout-row flex-centered">Waiting for opponent to join...</div>
-        <div class="layout-row flex-centered"><div class="game-player-loader"></div></div>
+        <div class="layout-col game-player-waiting-text-items">
+            <div class="layout-row flex-centered">Waiting for opponent to join...</div>
+            <div class="layout-row flex-centered"><div class="game-player-loader"></div></div>
+        </div>
         <button (click)="copyGameLink()">{{shareButtonText}}</button>
     </div>
     <div *ngIf="!isP1 && game && game.p1 && !game.p2" class="layout-col game-player-name-input-container">

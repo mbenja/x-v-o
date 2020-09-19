@@ -5,6 +5,7 @@
     --bg-grey-900: #1F2933;
     --bg-primary: #A6B1E1;
     --bg-primary-disabled: rgba(166, 177, 225, 0.5);
+    --bg-secondary: #83C5BE;
     --container-width: 50%;
 }
 
@@ -25,6 +26,7 @@ button {
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    outline: none;
     padding: 16px 8px;
     transform: scale(1);
     transition: 250ms;
