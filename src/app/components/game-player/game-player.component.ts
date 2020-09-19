@@ -50,38 +50,41 @@ export class GamePlayerComponent implements OnInit {
 
       this.isWin = this.getIsWin();
       this.isDraw = this.getIsDraw();
-      console.log(this.isWin);
-      console.log(this.isDraw);
       this.gameService.updateGame(this.game, this.gameId);
     }
   }
 
   getIsWin(): number {
-    let cellToCheck = -1;
     if (this.game.board[0] === this.game.board[1] && this.game.board[0] === this.game.board[2]) {
-      cellToCheck = 0;
-    } else if (this.game.board[3] === this.game.board[4] && this.game.board[3] === this.game.board[5]) {
-      cellToCheck = 3;
-    } else if (this.game.board[6] === this.game.board[7] && this.game.board[6] === this.game.board[8]) {
-      cellToCheck = 6;
-    } else if (this.game.board[0] === this.game.board[3] && this.game.board[0] === this.game.board[6]) {
-      cellToCheck = 0;
-    } else if (this.game.board[1] === this.game.board[4] && this.game.board[1] === this.game.board[7]) {
-      cellToCheck = 1;
-    } else if (this.game.board[2] === this.game.board[5] && this.game.board[2] === this.game.board[8] ) {
-      cellToCheck = 2;
-    } else if (this.game.board[0] === this.game.board[4] && this.game.board[0] === this.game.board[8]) {
-      cellToCheck = 0;
-    } else if (this.game.board[2] === this.game.board[4] && this.game.board[0] === this.game.board[6]) {
-      cellToCheck = 2;
+      if (this.game.board[0] !== "" && this.game.board[1] !== "" && this.game.board[2] !== "") return checkCell(0, this.game.board);
+    } 
+    if (this.game.board[3] === this.game.board[4] && this.game.board[3] === this.game.board[5]) {
+      if (this.game.board[3] !== "" && this.game.board[4] !== "" && this.game.board[5] !== "") return checkCell(3, this.game.board);
+    } 
+    if (this.game.board[6] === this.game.board[7] && this.game.board[6] === this.game.board[8]) {
+      if (this.game.board[6] !== "" && this.game.board[7] !== "" && this.game.board[8] !== "") return checkCell(6, this.game.board);
+    }
+    if (this.game.board[0] === this.game.board[3] && this.game.board[0] === this.game.board[6]) {
+      if (this.game.board[0] !== "" && this.game.board[3] !== "" && this.game.board[6] !== "") return checkCell(0, this.game.board);
+    }
+    if (this.game.board[1] === this.game.board[4] && this.game.board[1] === this.game.board[7]) {
+      if (this.game.board[1] !== "" && this.game.board[4] !== "" && this.game.board[7] !== "") return checkCell(1, this.game.board);
+    }
+    if (this.game.board[2] === this.game.board[5] && this.game.board[2] === this.game.board[8] ) {
+      if (this.game.board[2] !== "" && this.game.board[5] !== "" && this.game.board[8] !== "") return checkCell(2, this.game.board);
+    }
+    if (this.game.board[0] === this.game.board[4] && this.game.board[0] === this.game.board[8]) {
+      if (this.game.board[0] !== "" && this.game.board[4] !== "" && this.game.board[8] !== "") return checkCell(0, this.game.board);
+    }
+    if (this.game.board[2] === this.game.board[4] && this.game.board[2] === this.game.board[6]) {
+      if (this.game.board[2] !== "" && this.game.board[4] !== "" && this.game.board[6] !== "") return checkCell(2, this.game.board);
     }
 
-    if (cellToCheck !== -1) {
-      if (this.game.board[cellToCheck] === "x") return 1;
-      else if (this.game.board[cellToCheck] === "o") return 2;
-      else return -1;
-    } else {
-      return -1;
+    return -1;
+
+    function checkCell(cellNum: number, board: string[]): number {
+      if (board[cellNum] === "x") return 1;
+      else return 2;
     }
   }
 
