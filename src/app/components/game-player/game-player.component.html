@@ -1,0 +1,47 @@
+<div class="game-player layout-col">
+    <div *ngIf="isP1 && game && game.p1 && !game.p2" class="layout-col game-player-waiting-container">
+        <div class="layout-row flex-centered">Waiting for opponent to join...</div>
+        <div class="layout-row flex-centered"><div class="game-player-loader"></div></div>
+    </div>
+    <div *ngIf="!isP1 && game && game.p1 && !game.p2" class="layout-col game-player-name-input-container">
+        <input (input)="playerName = ($event.target.value)" [ngModel]="playerName" placeholder="Enter a name to continue" maxlength="12" />
+        <button [ngClass]="getContinueButtonClasses()" (click)="setPlayerName()">Continue</button>
+    </div>
+    <div *ngIf="game && game.p1 && game.p2">
+        <div class="game-player-names layout-col">
+            <div class="layout-row flex-space-between">
+                <div class="game-player-player-title">
+                    You
+                </div>
+                <div class="game-player-player-title">
+                    Opponent
+                </div>
+            </div>
+            <div class="layout-row flex-space-between">
+                <div class="game-player-name">
+                    {{isP1 ? game.p1 : game.p2}}
+                </div>
+                <div class="game-player-name">
+                    {{isP1 ? game.p2 : game.p1}}
+                </div>
+            </div>
+        </div>
+        <table class="game-player-board">
+            <tr>
+                <td class="game-player-table-cell r1 c1" [ngClass]="getTableCellClasses(0)">{{game.board[0]}}</td>
+                <td class="game-player-table-cell r1 c2" [ngClass]="getTableCellClasses(1)">{{game.board[1]}}</td>
+                <td class="game-player-table-cell r1" [ngClass]="getTableCellClasses(2)">{{game.board[2]}}</td>
+            </tr>
+            <tr>
+                <td class="game-player-table-cell r2 c1" [ngClass]="getTableCellClasses(3)">{{game.board[3]}}</td>
+                <td class="game-player-table-cell r2 c2" [ngClass]="getTableCellClasses(4)">{{game.board[4]}}</td>
+                <td class="game-player-table-cell r2" [ngClass]="getTableCellClasses(5)">{{game.board[5]}}</td>
+            </tr>
+            <tr>
+                <td class="game-player-table-cell c1" [ngClass]="getTableCellClasses(6)">{{game.board[6]}}</td>
+                <td class="game-player-table-cell c2" [ngClass]="getTableCellClasses(7)">{{game.board[7]}}</td>
+                <td class="game-player-table-cell" [ngClass]="getTableCellClasses(8)">{{game.board[8]}}</td>
+            </tr>
+        </table>
+    </div>  
+</div>

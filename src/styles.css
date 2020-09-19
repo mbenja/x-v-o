@@ -16,6 +16,7 @@
 
 body {
     background-color: var(--bg-grey-900);
+    font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -74,6 +75,14 @@ input:focus {
     background-color: var(--bg-primary-disabled);
 }
 
+.flex-centered {
+    justify-content: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
 .font-heading {
     font-family: 'Major Mono Display', monospace;
 }
@@ -86,8 +95,4 @@ input:focus {
 .layout-row {
     display: flex;
     flex-direction: row;
-}
-
-.flex-space-between {
-    justify-content: space-between;
 }

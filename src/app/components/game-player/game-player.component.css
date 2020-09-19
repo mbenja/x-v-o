@@ -1,0 +1,78 @@
+.game-player-board {
+    border-spacing: 0px;
+    margin: 16px 8px;
+    padding: 16px 16px;
+    width: -webkit-fill-available;
+}
+
+.game-player-continue-button {
+    margin-top: 16px;
+}
+
+.game-player-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.game-player-names {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    margin: 16px 8px;
+    padding: 16px 16px;
+}
+
+.game-player-name-input-container {
+    margin: 16px 8px;
+}
+
+.game-player-player-title {
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 14px;
+}
+
+.game-player-table-cell {
+    color: rgba(256, 256, 256, 0.9);
+    cursor: default;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 64px;
+    padding: 16px;
+    text-align: center;
+}
+
+.game-player-waiting-container {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    margin: 16px 8px;
+    padding: 16px 8px;
+    text-align: center;
+}
+
+.selectable:hover {
+    background-color: rgba(256, 256, 256, 0.25);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.c1, .c2 {
+    border-right: 4px solid var(--bg-primary);
+    stroke-linecap: round;
+}
+
+.r1, .r2 {
+    border-bottom: 4px solid var(--bg-primary);
+}
+
+.game-player-loader {
+    animation: spin 1.5s linear infinite;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    height: 20px;
+    margin-top: 8px;
+    width: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

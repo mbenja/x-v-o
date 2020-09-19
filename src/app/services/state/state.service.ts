@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class StateService {
   private playerName: string = "";
+  private isP1: boolean = false;
 
   constructor() { }
 
@@ -14,5 +15,13 @@ export class StateService {
 
   setPlayerName(name: string): void {
     this.playerName = name;
+  }
+
+  getIsP1(): boolean {
+    return this.isP1;
+  }
+
+  setIsP1(isP1: boolean): void {
+    this.isP1 = isP1;
   }
 }

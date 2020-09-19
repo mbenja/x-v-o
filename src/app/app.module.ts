@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GamePlayerComponent } from './components/game-player/game-player.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeMenuComponent } from './components/home-menu/home-menu.component';
 
@@ -15,7 +16,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeMenuComponent
+    HomeMenuComponent,
+    GamePlayerComponent
   ],
   imports: [
     BrowserModule,
