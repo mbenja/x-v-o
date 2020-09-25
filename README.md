@@ -7,7 +7,8 @@ Web application for playing tic-tac-toe with a friend. Built using Angular and F
 
  - NodeJS and NPM
  - Firebase Account
-## Requirements
+ 
+## To Run
  1. Create a new project within your **Firebase** account.
  2. Within this project, create a new **Firestore** collection named `games`.
  3. Within this project, create a new web app, and copy the **Firebase SDK snippet** with the **config** option set. This should look something like this:
@@ -22,6 +23,7 @@ const firebaseConfig = {
 	appId: "X:XXXXXXXXXX:web:XXXXXXXXXXXXXXXXXXXX"
 };
 ```
+
 4. Clone this repository to your local machine.
 ```
 git clone https://github.com/mbenja/x-v-o.git
